@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.8 on win32)" generated="20220422 09:00:24.886" rpa="false" schemaversion="3">
+<suite id="s1" name="Aws Test Cases" source="C:\Users\Aidar_Fakhrutdinov\AppData\Local\JetBrains\PyCharmCE2021.3\projects\mrc-bgdt-test-task\tests\aws\aws_test_cases.robot">
+<test id="s1-t1" name="Get bucket function should return an empty list if credentials are invalid" line="15">
+<kw name="Create List" library="BuiltIn">
+<var>${expected}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220422 09:00:25.496" level="INFO">${expected} = []</msg>
+<status status="PASS" starttime="20220422 09:00:25.496" endtime="20220422 09:00:25.496"/>
+</kw>
+<kw name="Get Bucket List" library="BucketVerification">
+<var>${actual}</var>
+<msg timestamp="20220422 09:00:26.643" level="INFO">${actual} = []</msg>
+<status status="PASS" starttime="20220422 09:00:25.497" endtime="20220422 09:00:26.643"/>
+</kw>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${actual}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" starttime="20220422 09:00:26.644" endtime="20220422 09:00:26.644"/>
+</kw>
+<status status="PASS" starttime="20220422 09:00:25.494" endtime="20220422 09:00:26.645"/>
+</test>
+<test id="s1-t2" name="Verify bucket encryption function should return 'Invalid credentials' if credentials are invalid" line="20">
+<kw name="Set Variable" library="BuiltIn">
+<var>${expected}</var>
+<arg>Invalid credentials</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220422 09:00:26.648" level="INFO">${expected} = Invalid credentials</msg>
+<status status="PASS" starttime="20220422 09:00:26.647" endtime="20220422 09:00:26.648"/>
+</kw>
+<kw name="Verify Bucket Encryption" library="BucketVerification">
+<var>${actual}</var>
+<arg>${BUCKET}</arg>
+<msg timestamp="20220422 09:00:27.198" level="INFO">${actual} = Invalid credentials</msg>
+<status status="PASS" starttime="20220422 09:00:26.648" endtime="20220422 09:00:27.198"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220422 09:00:27.199" endtime="20220422 09:00:27.199"/>
+</kw>
+<status status="PASS" starttime="20220422 09:00:26.646" endtime="20220422 09:00:27.200"/>
+</test>
+<doc>Some tests for AWS S3</doc>
+<status status="PASS" starttime="20220422 09:00:24.891" endtime="20220422 09:00:27.202"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Aws Test Cases">Aws Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
